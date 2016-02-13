@@ -1,0 +1,267 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>MXAcademy - Enriching Multimedia Talent</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- start plugins -->
+<!--  <script type="text/javascript" src="js/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!----font-Awesome----->
+   	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- Google Form API script-->
+
+<script>
+    var firstnum = Math.floor((Math.random() * 10) + 1);
+    var secondnum = Math.floor((Math.random() * 10) + 1);
+    var sum = firstnum + secondnum;
+    var question = 'Are you a robot? What is the value of ' + firstnum.toString() + '+' + secondnum.toString() + '?';
+    $('#cucaptcha').val("");
+    function postContactToGoogle() {
+    	var captcha = $('#cucaptcha').val();
+    	//console.log('captcha value ' + captcha);
+    	//console.log('Sum is ' + sum);
+    	if(!(sum == captcha)) {
+    		alert('Please provide correct answer to question ');
+    		return;
+    	}
+        var phone = $('#RPhone').val();
+      // console.log('phone is ' + phone);
+		var email = $('#REmail').val();
+	  // console.log('email is' + email);
+        var fname = $('#FName').val();
+       //console.log('name is ' + fname);
+		var lname = $('#LName').val();
+	//	console.log('lname is ' + lname);
+		var college = $('#RCollege').val();
+	//	console.log('college is ' + college);
+		var stream = encodeURIComponent($('#RStream').val());
+	//	console.log('stream is ' + stream);
+		var branch = encodeURIComponent($('#RBranch').val());
+	//	console.log('branch is ' + branch);
+		var percentage = $('#RPercentage').val();
+	//	console.log('percentage is ' + percentage);
+		var program = encodeURIComponent($('#RProgram').val());
+	//	console.log('program is ' + program);
+		var project = $("input[type='radio'][name='project']:checked").val();
+	//	console.log('project is ' + project);
+		
+        
+            $.ajax({
+                url: "https://docs.google.com/forms/d/1m4BlI0hY_Ug9icgXXaSTNWiZPLs_x-mxP3V9zNGpv-s/formResponse",
+                data: { 
+                	"entry.1172233956": fname,
+				"entry.1872462852": lname,
+				"entry.2017561187": email,
+                "entry.73257129": phone,
+				"entry.926062620": college,
+				"entry.1891647928": percentage,
+				"entry.2091916070": stream,
+				"entry.369788150": branch,
+				"entry.873230028": program,
+				"entry.1066679707": project
+				},
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                    	$('#RPhone').val("");
+                    	$('#REmail').val("");
+                    	$('#FName').val("");
+                    	$('#LName').val("");
+						$('#RCollege').val("");
+						$('#RStream').val("");
+						$('#RBranch').val("");
+						$('#RPercentage').val("");
+						$('#RProgram').val("");
+						$('#RProject').val("");
+                    	$('#cucaptcha').val("");
+                       $('.requestSubmited').show();
+                       console.log('IN error');
+                    }
+                }
+            });
+    }
+</script>
+</head>
+<body>
+<div class="header_bg1">
+<div class="container">
+	<div class="row header">
+		<div class="logo">
+			<a href="index.html"><img src="images/MXOR2.png" alt=""></a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="row h_menu">
+		<nav class="navbar navbar-default navbar-left" role="navigation">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="index.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="technology.html">Technology</a></li>
+		        <li><a href="trainings.html">Trainings</a></li>
+		        <li><a href="contact.html">Contact</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		    <!-- start soc_icons -->
+		</nav>
+		<div class="soc_icons navbar-right">
+			<ul class="list-unstyled soc_icons text-center">
+				<li class="active"><a href="register.html">Apply</a></li>
+			</ul>	
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</div>
+<!-- start main_btm -->
+<div class="main_btm">
+	<div class="container">
+		<div class="main row">
+			    <div class="col-md-6 content_left">
+					<div class="main_subtitle_red">
+						<h1>Eligibility</h1>
+					</div>
+					<ul>
+						<li>B.E, B.Tech ( VII Sem) in CS, ECE &amp; IT</li>
+						<li>M.E, M.Tech, PhD in CS, ECE &amp; IT</li>
+						<li>Min 65% aggregate ( until last term)</li>
+						<li>Basic C &amp; Linux programming skills.</li>
+					</ul>
+					<div class="main_subtitle_red">
+						<h1>Application Guidelines</h1>
+					</div>
+					<ul>
+						<li>All fields are mandatory.</li>
+						<li>Provide valid Email Id and Contact Number.</li>
+						<li>We will review your application based on our selection criteria and send final registration details in email.</li>
+					</ul>
+				</div>
+				<div class="col-md-6 content_right">
+				  <div class="contact-form">
+				  	<div class="main_subtitle_red">
+						<h1>Training Application</h1>
+					</div>
+					    <form id="callus" target="_self" onsubmit="" action="javascript: postContactToGoogle()">
+					     <div id="successRes" style="width: 100%; display: block; float: right; padding-top: 15px; padding-bottom: 15px;">
+            				<div class="requestSubmited" style="display:none; text-align: center;font-size:medium">Thank you !!<br/> Your application has been submitted successfully. We are reviewing your application and shall get back over email at our earliest.</div>
+        				  </div>
+					    	<div>
+						    	<span>First Name <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="FName"></span>
+						    </div>
+							<div>
+						    	<span>Last Name <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="LName"></span>
+						    </div>
+						    <div>
+						    	<span>E-mail Id <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="REmail"></span>
+						    </div>
+							 <div>
+						    	<span>Mobile Number <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="RPhone"></span>
+						    </div>
+							<div>
+						    	<span>College <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="RCollege"></span>
+						    </div>
+							<div>
+						    	<span>Stream <font color="red">*</font></span>
+						    	<span><select class="form-control" id="RStream" required>
+										<option value="">Select</option>
+										<option value="B.E.">B.E.</option> 
+										<option value="B.Tech">B.Tech</option> 
+										<option value="M.E.">M.E.</option>
+										<option value="M.Tech">M.Tech</option>
+										<option value="PhD.">PhD.</option>
+									</select>
+								</span>
+						    </div>
+							<div>
+						    	<span>Branch <font color="red">*</font></span>
+						    	<span><select  class="form-control" id="RBranch" required>
+										<option value="">Select</option>
+										<option value="Computer_Science_Engineering">Computer Science Engineering</option> 
+										<option value="Electronics_and_Communication">Electronics and Communication</option> 
+										<option value="Information_Technology">Information Technology</option>
+									</select>
+								</span>
+						    </div>
+							<div>
+						    	<span>Aggregate percentage till last term <font color="red">*</font></span>
+						    	<span><input type="text" class="form-control" id="RPercentage"></span>
+						    </div>
+							<div>
+						    	<span>Select Training Program <font color="red">*</font></span>
+						    	<span>
+									<select  class="form-control" required id="RProgram">
+										<option value="">Select</option>
+										<option value="Embedded_Audio_Engineering">Embedded Audio Engineering</option> 
+										<option value="Audio_Signal_Processing">Audio Signal Processing</option> 
+									</select>
+								</span>
+						    </div>
+							<div>
+						    	<span>Are you interested in doing final year project or thesis with us?<font color="red">*</font></span>
+						    	<span>
+									<input type="radio" name="project" value="Yes" id="RProject">&nbsp; &nbsp;Yes<br/>
+									<input type="radio" name="project" value="No" id="RProject">&nbsp; &nbsp;No
+								</span>
+						    </div>
+						    <div>
+						    	<span><script type="text/javascript">document.write(question)</script></span>
+						    	<span><input type="text" class="form-control" id="cucaptcha"></span>
+						    </div>
+						   <div>
+								<!--<input id="ButtonSubmit" name="" type="button" value="Send" onclick="postContactToGoogle()"/>-->
+								<label class="fa-btn btn-1 btn-1e"><input type="submit" value="Submit"/></label>
+								
+						  </div>
+						 
+					    </form>
+				</div>
+  			</div>		
+  			<div class="clearfix"></div>		
+	</div> 
+</div>
+</div>
+<div class="footer_bg"><!-- start footer -->
+	<div class="container">
+		<div class="row  footer">
+			<div class="copy text-center">
+				<p class="link"><span>&copy; 2016 Mediaxor Technologies Private Limited. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></span></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,198 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>MXAcademy - Enriching Multimedia Talent</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- start plugins -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!----font-Awesome----->
+   	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- Google Form API script-->
+<script src="https://ajax.googleapis.com/ajax/libsjquery/1.11.3/jquery.min.js">
+</script>
+<script>
+    var firstnum = Math.floor((Math.random() * 10) + 1);
+    var secondnum = Math.floor((Math.random() * 10) + 1);
+    var sum = firstnum + secondnum;
+    var question = 'Are you a robot? What is the value of ' + firstnum.toString() + '+' + secondnum.toString() + '?';
+    $('#cucaptcha').val("");
+    function postContactToGoogle() {
+    	var captcha = $('#cucaptcha').val();
+    	//console.log('captcha value ' + captcha);
+    	//console.log('Sum is ' + sum);
+    	if(!(sum == captcha)) {
+    		alert('Please provide correct answer to question ');
+    		return;
+    	}
+        var phone = $('#cuphone').val();
+       // console.log('phone is ' + phone);
+		var email = $('#cuemail').val();
+	//	console.log('email is' + email);
+        var name = $('#userName').val();
+      //  console.log('name is ' + name);
+        var message = $('#cumessage').val();
+        //console.log('message is ' + message);
+        
+            $.ajax({
+                url: "https://docs.google.com/forms/d/1nq5xsCIEhDwB95S7OG6w97pK81c4Xb6iUnwpBuR89BE/formResponse",
+                data: { "entry.1082499048": name,
+				"entry.955035896": email,
+                "entry.1451503225": phone, "entry.1140068825": message },
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                    	$('#cuphone').val("");
+                    	$('#cuemail').val("");
+                    	$('#userName').val("");
+                    	$('#cumessage').val("");
+                    	$('#cucaptcha').val("");
+                       $('.requestSubmited').show();
+                       //console.log('IN error');
+                    }
+                }
+            });
+    }
+</script>
+</head>
+<body>
+<div class="header_bg1">
+<div class="container">
+	<div class="row header">
+		<div class="logo">
+			<a href="index.html"><img src="images/MXOR2.png" alt=""></a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="row h_menu">
+		<nav class="navbar navbar-default navbar-left" role="navigation">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="index.html">Home</a></li>
+		        <li><a href="about.html">About Us</a></li>
+		        <li><a href="technology.html">Technology</a></li>
+		        <li><a href="trainings.html">Trainings</a></li>
+		        <li class="active"><a href="contact.html">Contact</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		    <!-- start soc_icons -->
+		</nav>
+		<div class="soc_icons navbar-right">
+			<ul class="list-unstyled text-center">
+				<li><a href="register.html">Apply</a></li>
+			</ul>	
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</div>
+<!-- start main -->
+<div class="main_bg">
+	<div class="container">
+		<div class="main row">
+		<div style="width: 100%">
+		<iframe width="100%" height="350px" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=600&amp;hl=en&amp;coord=26.805976,75.842890&amp;q=267%2F34%2C%20sector%2026%2C%20Opp%20P%20H%20D%20Office%20Main%2080%20Feet%20Road%2C%20pratap%20nagar%2C%20sanganer%2Cjaipur+(Mediaxor%20Academy)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.maps.ie/create-google-map/">Embed Google Map</a> by <a href="http://www.maps.ie/">Maps.ie</a></iframe>
+		
+		<!--	<iframe width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ65rD9wy2bTkRn5LX85u70iY&key=AIzaSyDVEoaNNd98BPIA9QpDcVzONhNuMDamxMI" allowfullscreen></iframe> -->	
+		</div>
+	</div>
+	</div>
+</div>
+<!-- end main -->
+<!-- start main_btm -->
+<div class="main_btm">
+	<div class="container">
+		<div class="main row">
+			    <div class="col-md-4 company_ad">
+				<div class="main_subtitle_red">
+					<h1>Address :</h1>
+				</div>
+      				<address>
+						 <p>Mediaxor Academy</p>
+						 <p>267/34, Pratap Nagar </p>
+						 <p>Sanganer, Jaipur</p>
+						 <p>India</p>
+				   		<p>	Phone:(91) 9819 307 404</p>
+					<p>Email: <a href="mailto:info@mxacademy.in">info@mxacademy.in</a></p>
+					<p><b>Landmark</b>: Opposite sector 26 overhead water tank, </br> Behind A Square fun point</p>
+				   	</address>
+				</div>
+				<div class="col-md-8">
+				  <div class="contact-form">
+					<div class="main_subtitle_red">
+						<h1>Contact Us</h1>
+					</div>
+					    <form id="callus" target="_self" onsubmit="" action="javascript: postContactToGoogle()">
+						<div id="successRes" style="width: 100%; display: block; float: right; padding-top: 15px; padding-bottom: 15px;">
+            				<div class="requestSubmited" style="display:none; text-align: center;font-size:medium">Your request has been sent!</div>
+        				  </div>
+					    	<div>
+						    	<span>name</span>
+						    	<span><input type="text" class="form-control" id="userName"></span>
+						    </div>
+						    <div>
+						    	<span>e-mail</span>
+						    	<span><input type="email" class="form-control" id="cuemail"></span>
+						    </div>
+							 <div>
+						    	<span>Phone</span>
+						    	<span><input type="tel" class="form-control" id="cuphone"></span>
+						    </div>
+						    <div>
+						    	<span>Subject</span>
+						    	<span><textarea name="userMsg" id="cumessage"> </textarea></span>
+						    </div>
+						    <div>
+						    	<span><script type="text/javascript">document.write(question)</script></span>
+						    	<span><input type="text" class="form-control" id="cucaptcha"></span>
+						    </div>
+						   <div>
+								<!--<input id="ButtonSubmit" name="" type="button" value="Send" onclick="postContactToGoogle()"/>-->
+								<label class="fa-btn btn-1 btn-1e"><input type="submit" value="submit"></label>
+						  </div>
+					    </form>
+				    </div>
+  			</div>		
+  			<div class="clearfix"></div>		
+	</div> 
+</div>
+</div>
+<!-- end main_btm -->
+<div class="footer_bg"><!-- start footer -->
+	<div class="container">
+		<div class="row  footer">
+			<div class="copy text-center">
+				<p class="link"><span>&copy; 2016 Mediaxor Technologies Private Limited. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></span></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
